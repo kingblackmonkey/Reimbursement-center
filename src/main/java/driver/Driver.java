@@ -28,32 +28,56 @@ public class Driver {
 		//it should link the new created user to the one in user role table;
 		//this is for test purpose
 		
-		//create employe typr object
-//		UserType usertype = new UserType("manager");
+		//create employe type object
+//		UserType usertype = new UserType("employee");
 		//use usertype dao to add to usertype table
-		UserTypeDao usertypeDao = new UserTypeDao();
+//		UserTypeDao usertypeDao = new UserTypeDao();
 		
 //		usertypeDao.insert(usertype);
 	
 		
 		
 		//create user type with id from usertype table; this usertype row already in user type table
-		UserType usertype = new UserType(1, "employee");
-		User user = new User("daragon", "black", "dbt12345", "4567",  usertype);
 		
 		
+//		UserType usertypeManager = new UserType(1, "manager");
 		
-	userdao.insert(user);
+//		UserType usertypeEmployee = new UserType(2, "employee");
+		
+//		parameters String firstname, String lastname, String password, UserType userTypeHolde
+//	User user = new User("David", "Tran",  "4567",   usertypeEmployee);
+		
+//		User user = new User("Teddy", "Tran",  "123",   usertypeEmployee);
+	
+		//manger user
+		
+//		User user = new User("Hien", "Tran",  "12345",    usertypeManager);		
+//	userdao.insert(user);
 		
 		//--------------------------------------------------------------------------------------
-		//to create a new request using the user already exist
-//		RepayRequest repayRequest = new RepayRequest(4568745, 100, "pending","food", user);
+		//to create a new request using the user already exist in database
+//		(int id, String firstname, String lastname, String username, String password)
+//		User user = new User(4, "David",  "Tran",   "DavidTran5514", "4567");	
+		// RepayRequest(int amount, String status, String description, User requestHolder)
+//		RepayRequest repayRequest = new RepayRequest( 100, "pending","food", user);
 
-		
+//		User user = new User(5, "Teddy",  "Tran",   "TeddyTran8718", "123");	
+//		
+//		RepayRequest repayRequest = new RepayRequest( 200, "pending","travel", user);
+//		
 //		RepayRequestDao repayRequestDao = new RepayRequestDao();
 //		repayRequestDao.insert(repayRequest);
-				
-//			userdao.insert(user);
+
+		
+	    User    user = new User(5, "Teddy",  "Tran",   "TeddyTran8718", "123");	
+	
+	    RepayRequest repayRequest = new RepayRequest( 300, "pending","lodging", user);
+	    RepayRequestDao repayRequestDao = new RepayRequestDao();
+	             repayRequestDao.insert(repayRequest);
+//--------------------------------------------------------------------------------		
+		
+		
+// type of repay request LODGING, TRAVEL, FOOD, or OTHER
 		
 //		userdao.update(user);
 //System.out.println(userdao.selectUser(1));	

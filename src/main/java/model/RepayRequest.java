@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -72,19 +74,20 @@ private String description;
 	
 	
 	
+	//constructor to make request ; request holder is the user that make the request ;it should have the user id in it; after login
+	//ticket number will be auto genrated
 	
 	
-	
-	public RepayRequest(int ticket_number, int amount, String status, String description, User requestHolder) {
-		super();
-		this.ticket_number = ticket_number;
-		this.amount = amount;
-		this.status = status;
-		this.description = description;
-		this.requestHolder = requestHolder;
-	}
 
-
+	public RepayRequest(int amount, String status, String description, User requestHolder) {
+	super();
+	
+	this.ticket_number = (new Random().nextInt(9000) + 1000);
+	this.amount = amount;
+	this.status = status;
+	this.description = description;
+	this.requestHolder = requestHolder;
+}
 
 
 
@@ -94,6 +97,15 @@ private String description;
 	public int getId() {
 		return id;
 	}
+
+
+
+
+
+
+
+
+
 
 	public void setId(int id) {
 		this.id = id;

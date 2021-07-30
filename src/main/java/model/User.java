@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -151,18 +152,16 @@ public User(int id, String firstname, String lastname, String username, String p
 
 
 
+//contructor to make new user; to add to database
 
-
-
-//receive user for test
-
-
-public User(String firstname, String lastname, String username, String password, UserType userTypeHolder) {
+public User(String firstname, String lastname, String password, UserType userTypeHolder) {
 	super();
 	this.firstname = firstname;
 	this.lastname = lastname;
-	this.username = username;
+	
+	this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
 	this.password = password;
+	
 	this.userTypeHolder = userTypeHolder;
 }
 
@@ -170,7 +169,26 @@ public User(String firstname, String lastname, String username, String password,
 
 
 
-//
+
+
+
+
+
+
+//make exsiting user in data base  for repay request table
+
+
+public User(int id, String firstname, String lastname, String username, String password) {
+	super();
+	this.id = id;
+	this.firstname = firstname;
+	this.lastname = lastname;
+	this.username = username;
+	this.password = password;
+}
+
+
+
 
 
 
@@ -189,6 +207,17 @@ public User(String firstname, String lastname, String username, String password,
 public int getId() {
 	return id;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
