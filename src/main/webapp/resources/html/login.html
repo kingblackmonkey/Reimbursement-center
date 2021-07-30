@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Repay Hub</title>
+
+<meta charset="utf-8">
+
+</head>
+<body>
+
+	<h1>Welcome to Repay Hub</h1>
+	<h3>Please sign in</h3>
+
+	<!-- You can include the method and action attributes to tell -->
+	<!-- The form where to send information, and how it should send it -->
+	<form id="login">
+		<label for='username'>Username: </label> <input id='username'
+			type='text' name='username' maxlength='50' required /> <label
+			for='password'>Password: </label> <input id='password'
+			type='password' name='password' required /> <input type='submit'
+			value='Login' />
+	</form>
+
+
+
+
+
+	<script> 
+  
+  let form = document.getElementById("login").addEventListener('submit', login);
+  async function login(e){
+	   	e.preventDefault();
+	   	let username = document.getElementById("username").value;
+	   	let password = document.getElementById("password").value;
+
+	   	let user = {
+	   		username,password
+	   		
+	    	};
+	   	
+	   	let users = [user]
+	   	
+	console.log(user);
+		try{
+			let req = await fetch('http://localhost:8080/RepayHub/api/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(user)
+			});
+			
+			
+			let res = await req.json();
+			
+			console.log(res.name);
+			//location.href = 'http://localhost:8080/RepayHub/login';
+			
+		} catch(e){
+	         	alert("check your credentials");
+			   return;
+		}
+
+	   	
+	   	
+	   	
+	   	
+	   	
+	   	
+	   	
+	   }
+	 
+  
+  
+  
+  
+  
+    
+
+
+ 
+    
+    </script>
+
+
+
+
+
+</body>
+</html>
