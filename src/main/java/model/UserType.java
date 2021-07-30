@@ -37,9 +37,17 @@ private String usertype;
 
 
 	
+	
+	
+	
 	//to create user type object
 	
 	
+		public UserType() {
+		super();
+	}
+
+
 		public UserType(String usertype) {
 		super();
 		this.usertype = usertype;

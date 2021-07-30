@@ -68,12 +68,16 @@ public class Driver {
 //		RepayRequestDao repayRequestDao = new RepayRequestDao();
 //		repayRequestDao.insert(repayRequest);
 
-		
-	    User    user = new User(5, "Teddy",  "Tran",   "TeddyTran8718", "123");	
-	
-	    RepayRequest repayRequest = new RepayRequest( 300, "pending","lodging", user);
+//		
+//	    User    user = new User(5, "Teddy",  "Tran",   "TeddyTran8718", "123");	
+//	
+//	    RepayRequest repayRequest = new RepayRequest( 300, "pending","lodging", user);
 	    RepayRequestDao repayRequestDao = new RepayRequestDao();
-	             repayRequestDao.insert(repayRequest);
+//	             repayRequestDao.insert(repayRequest);
+	    
+	    
+	    
+	    System.out.println(     repayRequestDao.getAllPendingRepayRequestForAnEmployee(5 )              );
 //--------------------------------------------------------------------------------		
 		
 		

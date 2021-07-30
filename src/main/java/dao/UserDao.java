@@ -46,12 +46,9 @@ return user;
 		
 	}
 	
-	//get user account   id
+
 	
-	
-	//update account  id 
-	
-	
+	//; for employee   ; to insert employee in data base
 	
 	public void insert(User user) {
 		//First we need to open up a session
@@ -67,7 +64,7 @@ return user;
 	}
 	
 	
-	
+	//get user by id ; for employee
 	public User selectUser(int id) {
 		Session ses = HibernateUtil.getSession();
 		//If you are using ses.get(), you must use the id
@@ -77,7 +74,7 @@ return user;
 	}
 	
 	
-	//update should use same number of fields 
+	//update should use same number of fields ; username and pass word ; usersrive should receive the new username and password  ; for employee
 	public void update(User user) {
 		Session ses = HibernateUtil.getSession();
 		Transaction tx = ses.beginTransaction();
@@ -85,5 +82,9 @@ return user;
 		tx.commit();
 	}
 	
+	
+	
+	
+	//get all users from user table; this is for manager
 	
 }

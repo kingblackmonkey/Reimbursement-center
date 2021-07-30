@@ -60,6 +60,14 @@ private String description;
 	
 	
 
+	public RepayRequest() {
+		super();
+	}
+
+
+
+
+
 	public RepayRequest(int id, int ticket_number, int amount, String status, String description, User requestHolder) {
 		super();
 		this.id = id;
